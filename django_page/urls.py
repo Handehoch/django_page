@@ -15,10 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.shortcuts import redirect
 
-from profession.views import index
+from django_page.views import index
 
-urlpatterns = [
-	path('admin/', admin.site.urls),
-	path('profession/', include('profession.urls'))
-]
+urlpatterns = [path('', index), path('admin/', admin.site.urls), path('profession/', include('profession.urls'))]

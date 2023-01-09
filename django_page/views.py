@@ -1,7 +1,7 @@
 from django.http import HttpResponse, HttpRequest
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 
 # Create your views here.
 def index(request: HttpRequest):
-	return render(request, 'profession/wrapper.html')
+	return redirect('/profession')
