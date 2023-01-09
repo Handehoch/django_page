@@ -1,0 +1,32 @@
+.sidebar {
+    display: inline-block;
+    position: fixed;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--main-color);
+}
+
+.sidebar__item {
+    text-shadow: none;
+    transition: text-shadow 0.3s linear;
+}
+
+.sidebar__item:not(:last-child) {
+    margin-bottom: 1.5rem;
+}
+
+.sidebar__item:hover {
+    text-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc;
+    transition: text-shadow 0.3s linear;
+}
+
+.sidebar__item:focus {
+    text-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc;
+    transition: text-shadow 0.3s linear;
+}
+
+.sidebar__link {
+    font-size: calc(1rem + 0.5vw);
+    line-height: 130%;
+    color: var(--white) !important;
+}

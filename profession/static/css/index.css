@@ -1,1 +1,6 @@
 @import "header.css";
+@import "sidebar.css";
+
+.main {
+    margin-left: 250px;
+}
