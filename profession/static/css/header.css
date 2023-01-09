@@ -2,3 +2,9 @@
     background-color: var(--main-color);
     min-height: 60px;
 }
+
+.header__logo {
+    max-height: 40px;
+    min-width: 100px;
+    padding-left: 40px;
+}
