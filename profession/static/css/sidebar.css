@@ -1,9 +1,23 @@
 .sidebar {
     display: inline-block;
     position: fixed;
-    width: 250px;
+    top: 0;
+    width: 270px;
     height: 100vh;
     background-color: var(--main-color);
+    z-index: 1000;
+}
+
+.sidebar__logo {
+  max-height: 60px;
+  min-width: 120px;
+  padding-left: 2rem;
+  margin-bottom: 10px;
+  padding-top: 10px;
+}
+
+.sidebar__links {
+    padding: 0 20px 0 2rem;
 }
 
 .sidebar__item {
@@ -26,7 +40,8 @@
 }
 
 .sidebar__link {
-    font-size: calc(1rem + 0.5vw);
+    font-size: calc(0.9rem + 0.5vw);
     line-height: 130%;
     color: var(--white) !important;
+    max-width: 200px;
 }

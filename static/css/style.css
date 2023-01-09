@@ -4,3 +4,7 @@
     --main-color: #0b5ed7;
     --white: #ffffff;
 }
+
+html, body {
+    font-family: 'Poppins', sans-serif;
+}

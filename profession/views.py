@@ -5,7 +5,7 @@ from django.shortcuts import render
 # Create your views here.
 def index(request: HttpRequest):
 	return render(request, 'profession/views/index.html', {
-		'title': 'First page'
+		'title': 'Fullstack разработчик'
 	})
 
 

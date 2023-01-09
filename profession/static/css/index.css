@@ -2,5 +2,28 @@
 @import "sidebar.css";
 
 .main {
-    margin-left: 250px;
+    margin-left: 270px;
+}
+
+.index__title {
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.index__info {
+    margin-bottom: 40px;
+}
+
+.index__subtitle {
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.index__text {
+    font-size: 22px;
+}
+
+.index__figure {
+    text-align: center;
+    margin: 0 auto 20px;
 }

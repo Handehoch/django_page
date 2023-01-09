@@ -1,9 +1,95 @@
 {% extends 'profession/views/wrapper.html' %}
 
+{% load static %}
+
 {% block content %}
     <section class="index">
-        <div class="container">
+        <div class="container index__container">
             <h1 class="index__title">{{ title }}</h1>
+            <div class="index__info">
+                <h2 class="index__subtitle">Кто такой Full Stack разработчик?</h2>
+                <p class="index__text">
+                    Разумно ли ожидать, что простые смертные будут владеть всеми аспектами разработки? Скорее всего нет, но в Facebook могут попросить об этом. На OSCON (O’Reilly Open Source Convention — ежегодный съезд, посвящённый обсуждению открытому и свободному программному обеспечению) один из сотрудников Facebook сказал, что они нанимают только Full Stack разработчиков. Что это значит?
+                </p>
+                <p class="index__text">
+                    Для меня Full Stack разработчик — это человек с хорошим пониманием каждого уровня разработки и искренне интересующийся всеми программными технологиями.
+                </p>
+            </div>
+            <div class="index__info">
+                <figure class="index__figure">
+                    <img src="{% static 'assets/index-photo.jpeg' %}" alt="Photo" class="index__photo">
+                    <figcaption class="index__caption">Fullstack development</figcaption>
+                </figure>
+                <h2 class="index__subtitle">Уровни Full Stack разработки:</h2>
+                <ol class="index__list">
+                    <li class="index__item">
+                        <p class="index__text">Сервер, сеть и среда хостинга</p>
+                    </li>
+                    <li class="index__item">
+                        <p class="index__text">Моделирование данных</p>
+                    </li>
+                    <li class="index__item">
+                        <p class="index__text">Бизнес логика</p>
+                    </li>
+                    <li class="index__item">
+                        <p class="index__text">Уровень API / Уровень действий / MVC</p>
+                    </li>
+                    <li class="index__item">
+                        <p class="index__text">Пользовательский интерфейс (UI)</p>
+                    </li>
+                    <li class="index__item">
+                        <p class="index__text">Пользовательский опыт (UX)</p>
+                    </li>
+                    <li class="index__item">
+                        <p class="index__text">Понимание что нужно клиенту и бизнесу</p>
+                    </li>
+                </ol>
+            </div>
+            <div class="index__info">
+                <h2 class="index__subtitle">Плюсы:</h2>
+                <ol class="index__list">
+                    <li class="index__item">
+                        <p class="index__text">
+                            Знание многих технологий дает возможность выбрать, куда двигаться дальше; ему проще перепрофилироваться.
+                        </p>
+                    </li>
+                    <li class="index__item">
+                        <p class="index__text">
+                            Работа разнообразна, так как есть возможность менять проекты, пробовать разные варианты и технологии.
+                        </p>
+                    </li>
+                    <li class="index__item">
+                        <p class="index__text">
+                            Fullstack-разработчики понимают работу многих технологий, и поэтому могут выбрать хорошее решение для проекта, исправить недочеты существующих проектов и так далее.
+                        </p>
+                    </li>
+                </ol>
+            </div>
+            <div class="index__info">
+                <h2 class="index__subtitle">Минусов, конечно, тоже хватает:</h2>
+                <ol class="index__list">
+                    <li class="index__item">
+                        <p class="index__text">
+                            По сравнению с узкоспециализированным разработчиком, у фулстек-разработчика меньше знаний в каждой из областей (то есть его знания работают вширь, а не вглубь).
+                        </p>
+                    </li>
+                    <li class="index__item">
+                        <p class="index__text">
+                            Из предыдущего пункта вытекает то, что ему сложнее развиваться – приходится осваивать все и сразу, а не концентрироваться на развитии в одном направлении.
+                        </p>
+                    </li>
+                    <li class="index__item">
+                        <p class="index__text">
+                            У Fullstack-разработчика часто отсутствует фиксированная зона ответственности, и из-за этого его еще сложно заменить другим специалистом.
+                        </p>
+                    </li>
+                    <li class="index__item">
+                        <p class="index__text">
+                            Нужно уметь хорошо планировать свою работу для того, чтобы все и везде успевать – иначе появится риск перегрузки задачами.
+                        </p>
+                    </li>
+                </ol>
+            </div>
         </div>
     </section>
 {% endblock content %}
