@@ -4,4 +4,10 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request: HttpRequest):
-	return render(request, 'profession/wrapper.html')
+	return render(request, 'profession/views/index.html', {
+		'title': 'First page'
+	})
+
+
+def demand(request: HttpRequest):
+	return render(request, 'profession/views/demand.html')
