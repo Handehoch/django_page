@@ -3,10 +3,5 @@
     min-height: 60px;
     position: relative;
     z-index: 100;
+    margin-bottom: 40px;
 }
-
-/*.header__logo {*/
-/*    max-height: 40px;*/
-/*    min-width: 100px;*/
-/*    padding-left: 2rem;*/
-/*}*/

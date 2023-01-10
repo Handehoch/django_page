@@ -1,5 +1,35 @@
 {% extends 'profession/views/wrapper.html' %}
 
+{% load static %}
+
 {% block content %}
-    <h1>Second page</h1>
+    <section class="demand">
+        <div class="container demand__container">
+        <h1 class="title demand__title">{{ title }}</h1>
+            <table class="table table-light table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Год</th>
+                        <th>Средняя зарплата</th>
+                        <th>Средняя зарплата - Fullstack</th>
+                        <th>Количество вакансий</th>
+                        <th>Количество вакансий - Fullstack</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if data %}
+                    {% for row in data %}
+                    <tr>
+                        <td>{{row.year}}</td>
+                        <td>{{row.average_salary}}</td>
+                        <td>{{row.average_salary_fs}}</td>
+                        <td>{{row.amount}}</td>
+                        <td>{{row.amount_fs}}</td>
+                    </tr>
+                    {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </section>
 {% endblock content %}

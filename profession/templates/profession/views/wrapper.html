@@ -11,17 +11,18 @@
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
 </head>
 <body>
-    {% include 'profession/partials/header.html' %}
-    {% include 'profession/partials/sidebar.html' %}
-    <main class="main">
-        {% block content %}
+{% include 'profession/partials/header.html' %}
+{% include 'profession/partials/sidebar.html' %}
+<main class="main">
+    {% block content %}
 
-        {% endblock content %}
-    </main>
-    {% include 'profession/partials/footer.html' %}
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    {% endblock content %}
+</main>
+{% include 'profession/partials/footer.html' %}
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
 </body>
 </html>

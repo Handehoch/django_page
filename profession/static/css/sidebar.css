@@ -9,11 +9,11 @@
 }
 
 .sidebar__logo {
-  max-height: 60px;
-  min-width: 120px;
-  padding-left: 2rem;
-  margin-bottom: 10px;
-  padding-top: 10px;
+    max-height: 60px;
+    min-width: 120px;
+    padding-left: 2rem;
+    margin-bottom: 10px;
+    padding-top: 10px;
 }
 
 .sidebar__links {
@@ -30,12 +30,12 @@
 }
 
 .sidebar__item:hover {
-    text-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc;
+    text-shadow: 1px 1px 10px #fff, 1px 1px 10px #ccc;
     transition: text-shadow 0.3s linear;
 }
 
 .sidebar__item:focus {
-    text-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc;
+    text-shadow: 1px 1px 10px #fff, 1px 1px 10px #ccc;
     transition: text-shadow 0.3s linear;
 }
 
