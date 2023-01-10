@@ -45,3 +45,14 @@
     color: var(--white) !important;
     max-width: 200px;
 }
+
+.sidebar__info {
+    font-size: 20px;
+    color: var(--white);
+    padding-left: 2rem;
+    padding-bottom: 20px;
+}
+
+.sidebar__creator {
+    margin: 0;
+}

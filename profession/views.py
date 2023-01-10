@@ -39,3 +39,7 @@ def geography(request: HttpRequest):
     }
     
     return render(request, 'profession/views/geograpy.html', context)
+
+
+def skills(request: HttpRequest):
+    return render(request, 'profession/views/skills.html')

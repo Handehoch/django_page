@@ -1,6 +1,6 @@
 {% load static %}
 
-<aside class="sidebar">
+<aside class="sidebar d-flex flex-column">
     <img class="sidebar__logo" src="{% static 'assets/logo.png' %}" alt="">
     <ul class="sidebar__links">
         <li class="sidebar__item">
@@ -16,7 +16,11 @@
             <a href="" class="sidebar__link">Навыки</a>
         </li>
         <li class="sidebar__item">
-            <a href="" class="sidebar__link">Последние вакансии</a>
+            <a href="/profession/skills" class="sidebar__link">Последние вакансии</a>
         </li>
     </ul>
+    <div class="sidebar__info d-flex flex-column mt-auto">
+        <p class="sidebar__creator">Шеланов Борислав Андреевич АТ-34</p>
+        <p class="sidebar__creator">РИ-210942</p>
+    </div>
 </aside>
