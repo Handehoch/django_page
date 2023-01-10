@@ -5,8 +5,13 @@
 {% block content %}
     <section class="demand">
         <div class="container demand__container">
-        <h1 class="title demand__title">{{ title }}</h1>
-            <table class="table table-light table-striped table-hover">
+            <h1 class="title demand__title">{{ title }}</h1>
+            <figure class="figure demand__figure">
+                <figcaption class="caption demand__caption">Статистика по годам</figcaption>
+                <img class="demand__image" src="{% static 'assets/years.png' %}" alt="Years statistic">
+            </figure>
+            <p class="description demand__description">Сравнительная таблица зарплат и вакансий</p>
+            <table class="table demand__table table table-light table-striped table-hover">
                 <thead>
                     <tr>
                         <th>Год</th>
@@ -19,13 +24,13 @@
                 <tbody>
                     {% if data %}
                     {% for row in data %}
-                    <tr>
-                        <td>{{row.year}}</td>
-                        <td>{{row.average_salary}}</td>
-                        <td>{{row.average_salary_fs}}</td>
-                        <td>{{row.amount}}</td>
-                        <td>{{row.amount_fs}}</td>
-                    </tr>
+                        <tr>
+                            <td>{{row.year}}</td>
+                            <td>{{row.average_salary}}</td>
+                            <td>{{row.average_salary_fs}}</td>
+                            <td>{{row.amount}}</td>
+                            <td>{{row.amount_fs}}</td>
+                        </tr>
                     {% endfor %}
                     {% endif %}
                 </tbody>

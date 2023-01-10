@@ -16,7 +16,6 @@ def index(request: HttpRequest):
 
 
 def demand(request: HttpRequest):
-    print(PurePath(str(BASE_DIR) + '/profession/data/years.csv'))
     df = pd.read_csv(PurePath(str(BASE_DIR) + '/profession/data/years.csv'))
     json_records = df.reset_index().to_json(orient='records')
     data = json.loads(json_records)
@@ -27,3 +26,16 @@ def demand(request: HttpRequest):
     }
     
     return render(request, 'profession/views/demand.html', context)
+
+
+def geography(request: HttpRequest):
+    df = pd.read_csv(PurePath(str(BASE_DIR) + '/profession/data/cities.csv'))
+    json_records = df.reset_index().to_json(orient='records')
+    data = json.loads(json_records)
+    
+    context = {
+        'title': 'География',
+        'data': data
+    }
+    
+    return render(request, 'profession/views/geograpy.html', context)

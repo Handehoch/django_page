@@ -1,0 +1,38 @@
+{% extends 'profession/views/wrapper.html' %}
+
+{% load static %}
+
+{% block content %}
+    <section class="geography">
+        <div class="container geography__container">
+            <h1 class="title geography__title">{{ title }}</h1>
+            <figure class="figure geography__figure">
+                <figcaption class="caption geography__caption">Статистика по городам</figcaption>
+                <img class="geography__image" src="{% static 'assets/cities.png' %}" alt="Years statistic">
+            </figure>
+            <p class="description geography__description">Сравнительная таблица зарплат и процента вакасий</p>
+            <table class="geography__table table table-light table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Город</th>
+                        <th>Уровнь зарплат</th>
+                        <th>Город</th>
+                        <th>Доля вакансий</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if data %}
+                    {% for row in data %}
+                        <tr>
+                            <td>{{ row.city1 }}</td>
+                            <td>{{ row.salary }}</td>
+                            <td>{{ row.city2 }}</td>
+                            <td>{{ row.vacancies }}</td>
+                        </tr>
+                    {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+{% endblock content %}

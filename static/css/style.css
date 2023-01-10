@@ -13,3 +13,21 @@ html, body {
     font-weight: 600;
     margin-bottom: 40px;
 }
+
+.figure {
+    margin-bottom: 40px;
+}
+
+.caption {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.table {
+    margin-bottom: 20px;
+}
+
+.description {
+    margin: 0;
+    font-size: 20px;
+}
