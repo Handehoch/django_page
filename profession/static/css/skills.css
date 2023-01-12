@@ -1,0 +1,72 @@
+.skills__form {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 30px;
+}
+
+.skills__helper {
+    margin-right: 20px;
+}
+
+.skills__submit {
+    background-color: var(--main-color);
+    color: var(--white);
+    padding: 3px 16px;
+    max-height: inherit;
+}
+
+.skills__vacancies {
+    flex: 2;
+    flex-shrink: 1;
+}
+
+.skills__vacancy {
+    border: 1px solid var(--hh-border-color);
+    padding: 10px 20px;
+    max-width: 45%;
+    margin-bottom: 20px;
+}
+
+.skills__vacancy:nth-child(2n - 1) {
+    margin-right: 20px;
+}
+
+.skill {
+    height: 100%;
+}
+
+.skill__subtitle {
+    font-size: 22px;
+    font-weight: 600;
+    max-width: 90%;
+}
+
+.skill__short-info {
+
+}
+
+.skills__list {
+ flex: 1;
+}
+
+.skills__item {
+    margin-bottom: 20px;
+}
+
+.skills__link {
+    text-decoration: underline !important;
+    cursor: pointer;
+    color: var(--hh-border-color) !important;
+    margin-top: auto !important;
+}
+
+form > p {
+    border: 1px solid var(--hh-border-color);
+    padding: 3px 6px;
+    margin: 0 20px 0 0;
+}
+
+.errorlist {
+    display: none;
+}

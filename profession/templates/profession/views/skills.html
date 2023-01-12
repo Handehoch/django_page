@@ -3,11 +3,62 @@
 {% block content %}
     <section class="skills">
         <div class="container skills__container">
-            <aside class="skills__widget">
-                <script class="hh-script"
-                        src="https://api.hh.ru/widgets/vacancies/search?count=6&locale=RU&links_color=1560b2&border_color=1560b2&text=fullstack+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA&area=113&show_region=true">
-                </script>
-            </aside>
+            <h1 class="title skills__title">{{ title }}</h1>
+            <form method="post" class="skills__form d-flex align-items-center">
+                <p class="skills__helper">Format: MM/DD/YYYY</p>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="skills__submit" type="submit">Найти вакансии</button>
+            </form>
+            <div class="skills__info d-flex">
+                <ul class="skills__vacancies d-flex flex-wrap">
+                    {% if vacancies %}
+                        {% for vacancy in vacancies %}
+                            <li class="skills__vacancy">
+                                <article class="skill skills__vacancy-info d-flex flex-column">
+                                    <h2 class="skill__subtitle">{{ vacancy.name }}</h2>
+                                    <div class="skill__info">
+                                        <p class="skill__description">{{ vacancy.description }}</p>
+                                        <p class="skill__description">{{ vacancy.key_skills }}</p>
+                                        {% if vacancy.salary.average_salary is not None %}
+                                            <p class="skill__description">
+                                                от {{ vacancy.salary.average_salary }} {{ vacancy.salary.currency }}, {{ vacancy.employer.name }}, {{ vacancy.area.name }}</p>
+                                        {% else %}
+                                            <p class="skill__description">{{ vacancy.employer.name }}, {{ vacancy.area.name }}</p>
+                                        {% endif %}
+                                        <p class="skill__description">{{ vacancy.published_at }}</p>
+                                    </div>
+                                    <a href="{{ vacancy.url }}" class="skills__description skills__link"
+                                       target="_blank">{{ vacancy.url }}</a>
+                                </article>
+                            </li>
+                        {% endfor %}
+                    {% endif %}
+                </ul>
+                <ul class="skills__list">
+                    <li class="skills__item">
+                        <aside class="skills__widget">
+                            <script class="hh-script"
+                                    src="https://api.hh.ru/widgets/vacancies/search?count=6&locale=RU&links_color=1560b2&border_color=1560b2&text=fullstack+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA&area=113&show_region=true">
+                            </script>
+                        </aside>
+                    </li>
+                    <li class="skills__item">
+                        <aside class="skills__widget">
+                            <script class="hh-script"
+                                    src="https://api.hh.ru/widgets/vacancies/search?count=3&locale=RU&links_color=1560b2&border_color=1560b2&text=frontend-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA&area=113&show_region=true">
+                            </script>
+                        </aside>
+                    </li>
+                    <li class="skills__item">
+                        <aside class="skills__widget">
+                            <script class="hh-script"
+                                    src="https://api.hh.ru/widgets/vacancies/search?count=3&locale=RU&links_color=1560b2&border_color=1560b2&text=backend-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA&area=113&show_region=true">
+                            </script>
+                        </aside>
+                    </li>
+                </ul>
+            </div>
         </div>
     </section>
 {% endblock content %}

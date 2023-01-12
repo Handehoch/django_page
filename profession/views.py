@@ -1,14 +1,18 @@
-import os
 import json
-import pandas as pd
+from pathlib import PurePath
 
-from pathlib import Path, PurePath
+import pandas as pd
 from django.http import HttpRequest
 from django.shortcuts import render
+
 from django_page.settings import BASE_DIR
+from profession.forms.skills_form import SkillForm
+from profession.models import Vacancy
+from profession.services.skills import SkillsService
+
+ss = SkillsService()
 
 
-# Create your views here.
 def index(request: HttpRequest):
     return render(request, 'profession/views/index.html', {
         'title': 'Fullstack разработчик'
@@ -42,4 +46,18 @@ def geography(request: HttpRequest):
 
 
 def skills(request: HttpRequest):
-    return render(request, 'profession/views/skills.html')
+    form = SkillForm(request.POST)
+    
+    vacancies: [Vacancy] = []
+    if form.is_valid():
+        date_from = form.cleaned_data['date_from']
+        vacancies: [Vacancy] = sorted([ss.get_vacancy(x.id) for x in ss.get_vacancies(date_from)],
+                                      key=lambda x: x.published_at)
+    
+    context = {
+        'form': form,
+        'title': 'Последние вакансии',
+        'vacancies': vacancies
+    }
+    
+    return render(request, 'profession/views/skills.html', context)

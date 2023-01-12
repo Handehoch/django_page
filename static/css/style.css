@@ -3,15 +3,21 @@
 :root {
     --main-color: #0b5ed7;
     --white: #ffffff;
+    --hh-border-color: #1560b2;
 }
 
 html, body {
     font-family: 'Poppins', sans-serif;
 }
 
+.container {
+    padding-left: 30px;
+}
+
 .title {
     font-weight: 600;
     margin-bottom: 40px;
+    padding-left: 30px;
 }
 
 .figure {
