@@ -6,5 +6,6 @@ urlpatterns = [
     path('', index),
     path('demand', demand),
     path('geography', geography),
-    path('skills', skills)
+    path('skills', skills),
+    path('vacancies', vacancies)
 ]

@@ -1,6 +1,7 @@
 @import "header.css";
 @import "sidebar.css";
 @import "skills.css";
+@import "vacancies.css";
 
 .main {
     margin-left: 270px;

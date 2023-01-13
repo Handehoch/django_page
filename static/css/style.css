@@ -10,6 +10,10 @@ html, body {
     font-family: 'Poppins', sans-serif;
 }
 
+.main {
+    padding-left: 30px;
+}
+
 .container {
     padding-left: 30px;
 }
@@ -17,7 +21,6 @@ html, body {
 .title {
     font-weight: 600;
     margin-bottom: 40px;
-    padding-left: 30px;
 }
 
 .figure {
@@ -36,4 +39,11 @@ html, body {
 .description {
     margin: 0;
     font-size: 20px;
+}
+
+.submit {
+    background-color: var(--main-color);
+    color: var(--white);
+    padding: 3px 16px;
+    max-height: inherit;
 }
