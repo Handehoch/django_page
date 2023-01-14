@@ -1,5 +1,6 @@
 import datetime
 import json
+from pathlib import PurePath
 
 import pandas as pd
 from django.http import HttpRequest
@@ -9,6 +10,7 @@ from django_page.forms.vacancies_form import VacanciesForm
 from django_page.forms.skills_form import SkillsForm
 from django_page.models import Vacancy
 from django_page.services.skills import SkillsService
+from django_page.settings import BASE_DIR
 
 ss = SkillsService()
 
@@ -20,7 +22,7 @@ def index(request: HttpRequest):
 
 
 def demand(request: HttpRequest):
-    df = pd.read_csv('django_page/data/years.csv')
+    df = pd.read_csv(PurePath(BASE_DIR) / 'django_page/data/years.csv')
     json_records = df.reset_index().to_json(orient='records')
     data = json.loads(json_records)
     
@@ -33,7 +35,7 @@ def demand(request: HttpRequest):
 
 
 def geography(request: HttpRequest):
-    df = pd.read_csv('django_page/data/cities.csv')
+    df = pd.read_csv(PurePath(BASE_DIR) / 'django_page/data/cities.csv')
     json_records = df.reset_index().to_json(orient='records')
     data = json.loads(json_records)
     
@@ -55,7 +57,7 @@ def skills(request: HttpRequest):
     
     if form.is_valid():
         select = form.cleaned_data['select']
-        df = pd.read_csv(f'django_page/data/result{select}.csv')
+        df = pd.read_csv(PurePath(BASE_DIR) / f'django_page/data/result{select}.csv')
         json_records = df.reset_index().to_json(orient='records')
         skills_data = json.loads(json_records)
         context['skills'] = skills_data
