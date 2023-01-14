@@ -15,14 +15,14 @@
           rel="stylesheet">
 </head>
 <body>
-{% include 'profession/partials/header.html' %}
-{% include 'profession/partials/sidebar.html' %}
+{% include 'partials/header.html' %}
+{% include 'partials/sidebar.html' %}
 <main class="main">
     {% block content %}
 
     {% endblock content %}
 </main>
-{% include 'profession/partials/footer.html' %}
+{% include 'partials/footer.html' %}
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </body>
 </html>
